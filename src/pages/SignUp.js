@@ -1,11 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [isLoading, setIsloading] = useState(true);
-  const [cookie, setCookie] = useState();
   const obj = {};
 
   const handleSubmit = async (event) => {
@@ -15,6 +13,8 @@ const SignUp = () => {
       " https://lereacteur-vinted-api.herokuapp.com/user/signup",
       obj
     );
+    Cookies.set("myCookies", response.data.token);
+    console.log(response.data);
   };
 
   return !isLoading ? (
