@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Logo from "../img/Vinted-logo.svg.png";
 import Banner from "../img/banner.jpg";
-import Thetest from "../components/Thetest";
+import Cards from "../components/Cards";
 
 const Home = () => {
   const [data, setData] = useState();
@@ -21,29 +20,23 @@ const Home = () => {
   }, []);
 
   return isLoading ? (
-    <p>ça load</p>
+    <p>En cours de chargement ...</p>
   ) : (
     // IL FAUDRA MAPER SUR LE TABLEAU ICI
 
     <div>
-      <div></div>
-      <header className="header">
-        <img className="logo" src={Logo} alt="" />
-        <div className="ensembleButtons">
-          <button>S'inscrire</button>
-          <button>Se connecter</button>
-        </div>
-        <button>vends tes articles</button>
-      </header>
-      <main></main>
       <div>
         <img className="banner" src={Banner} alt="" />
       </div>
       <div>
-        <span>Articles Populaires</span>
-        <div className="cadresOffers">
+        <span className="titre">Articles Populaires</span>
+        <div className="cadresOffers container">
           {data.offers.map((item, index) => {
-            return <Thetest key={index} item={item}></Thetest>;
+            return (
+              <div className="container">
+                <Cards item={item} key={index}></Cards>
+              </div>
+            );
           })}
         </div>
       </div>
