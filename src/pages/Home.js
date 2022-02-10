@@ -25,12 +25,13 @@ const Home = () => {
     // IL FAUDRA MAPER SUR LE TABLEAU ICI
 
     <div>
+      <div className="ligneGrise"></div>
       <div>
         <img className="banner" src={Banner} alt="" />
       </div>
-      <div>
-        <span className="titre">Articles Populaires</span>
-        <div className="cadresOffers container">
+      <div className="container">
+        <h1 className="titre">Article populaires</h1>
+        <div className="ensembleOffers container">
           {data.offers.map((item, index) => {
             return (
               <div className="container">

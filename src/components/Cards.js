@@ -2,23 +2,28 @@ import { Link } from "react-router-dom";
 
 const Cards = ({ item }) => {
   return (
-    <div className="container">
-      <Link to={`/offer/${item._id}`} className="cadreOffer">
+    <div>
+      <Link to={`/offer/${item._id}`}>
         {" "}
-        <div>
-          <div>
-            <div className="nomUser ">{item.owner.account.username}</div>
-            <img src="" alt="" />
+        <div className="cadreOffer">
+          <div className="ensembleLogoNom">
+            <img
+              className="logoCard"
+              src={item.owner.account.avatar.secure_url}
+              alt="logoCard"
+            />
+            <div className="nomCard">{item.owner.account.username}</div>
           </div>
-
-          <img
-            className="pictures"
-            src={item.product_image.secure_url}
-            alt=""
-          />
-          <div>
-            <div>{item.product_price}</div>
-            <div>coeur</div>
+          <div className="divPicture">
+            <img
+              className="pictures"
+              src={item.product_image.secure_url}
+              alt="pictures"
+            />
+          </div>
+          <div className="ensemblePricePopular">
+            <div className="priceCard">{item.product_price}</div>
+            <div className="popularCard">popular</div>
           </div>
           <div>Taille</div>
           <div>{item.product_details.marque}</div>

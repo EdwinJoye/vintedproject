@@ -23,9 +23,18 @@ const Offer = () => {
     <p>En cours de chargement ...</p>
   ) : (
     <div>
-      <div className="cadreOffer2">
-        <div>{data.product_price}</div>
-        <div>{data.owner.account.username}</div>
+      <div className="ensembleOffer">
+        <div className="cadreOffer">
+          <div className="divPicture">
+            <img
+              className="pictures"
+              src={data.product_image.secure_url}
+              alt="pictures"
+            />
+          </div>
+          <div>{data.product_price}</div>
+          <div>{data.owner.account.username}</div>
+        </div>
       </div>
     </div>
   );
