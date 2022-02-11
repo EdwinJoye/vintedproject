@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Logo from "../img/Vinted-logo.svg.png";
 
-const Header = ({ item }) => {
+const Header = ({ token, setUser }) => {
   const navigate = useNavigate();
 
   const handleSignUp = () => {
@@ -14,7 +14,32 @@ const Header = ({ item }) => {
   const handleHome = () => {
     navigate("/");
   };
-  return (
+  return token ? (
+    <div>
+      <header className="header container">
+        <div className="ensembleLogoSearch">
+          <img className="logo" src={Logo} alt="" onClick={handleHome} />
+          <input
+            className="searchButton fas fa-search"
+            type="search"
+            placeholder="Recherche des articles"
+          />{" "}
+        </div>{" "}
+        <div className="ensembleButtons">
+          <button
+            className="buttonDeconnecter "
+            onClick={() => {
+              setUser(null);
+              navigate("/");
+            }}
+          >
+            Se déconnecter
+          </button>
+          <button className="buttonVends">Vends tes articles</button>
+        </div>
+      </header>
+    </div>
+  ) : (
     <div>
       <header className="header container">
         <div className="ensembleLogoSearch">
@@ -23,7 +48,7 @@ const Header = ({ item }) => {
             className="searchButton"
             type="search"
             placeholder="Recherche des articles"
-          />
+          />{" "}
         </div>
         <div className="ensembleButtons">
           <button className="buttonUnique" onClick={handleSignUp}>

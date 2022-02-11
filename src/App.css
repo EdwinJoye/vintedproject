@@ -1,4 +1,4 @@
-/* GENERAL */
+/*/////////////////////////// GENERAL /////////////////////////*/
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -11,11 +11,11 @@ a {
   text-decoration: none;
   color: black;
 }
-/* HEADER */
+
+/*/////////////////////////// HEADER /////////////////////////*/
 .header {
   display: flex;
   justify-content: space-between;
-
   padding: 10px;
 }
 .ensembleLogoSearch {
@@ -195,8 +195,19 @@ a {
   border-bottom: 1px solid lightgray;
   margin-bottom: 20px;
 }
+.buttonDeconnecter {
+  background-color: #c2185b;
+  border-radius: 5px;
+  border: none;
+  height: 40px;
+  padding: 10px;
+  color: white;
+}
+.buttonDeconnecter:hover {
+  cursor: pointer;
+}
 
-/* HOME CARDS */
+/*/////////////////////////// HOME /////////////////////////*/
 .titre {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -211,10 +222,10 @@ a {
 .cadreOffer {
   width: 500px;
   height: 414px;
-  /* background-color: antiquewhite; */
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  /* background-color: antiquewhite; */
 }
 .cadreOffer:hover {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
@@ -230,6 +241,9 @@ a {
   height: 35px;
   border-radius: 100px;
   margin-right: 20px;
+}
+.logoCard:hover {
+  cursor: pointer;
 }
 .nomCard {
   display: flex;
@@ -260,20 +274,102 @@ a {
   font-size: 15px;
   color: grey;
 }
-/* OFFER CARD */
 .cadreOffer {
   height: 450px;
   width: 235px;
   display: flex;
   /* border: 2px solid black; */
 }
-.ensembleOffer {
+
+/*/////////////////////////// OFFER PAGE /////////////////////////*/
+.ensemblePageOffer {
+  background-color: #ebedee;
+  height: calc(100vh - 64px);
+  padding: 40px;
+}
+.picturePageOffer {
+  width: 320px;
+  height: 478px;
+  margin-left: 100px;
+  object-fit: cover;
+}
+.carréPageOffer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin: 0px 156.5px;
+  padding: 30px;
+}
+.ensembleInfosPageOffer {
+  width: 240px;
+  height: 418px;
+  background-color: white;
+  margin-right: 100px;
+  padding: 30px;
+}
+.pricePageOffer {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.ensembleDetails1 {
+  height: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid lightgray;
+  /* background-color: #999999; */
+}
+.ensembleDetails2 {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #2db0ba; */
+}
+.ensembleTitreDetails {
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+}
+.ensembeDetails {
+  font-size: 13px;
+  color: #666666;
+  line-height: 20px;
+}
+.productNamePageOffer {
+  font-size: 13px;
+  margin-bottom: 10px;
+  height: 20px;
+  /* background-color: azure; */
+}
+.productDescriptionPageOffer {
+  height: 65px;
+  font-size: 13px;
+  color: #999999;
+  overflow: hidden;
+  /* background-color: antiquewhite; */
+}
+.ensembleLogoNomPageOffer {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  height: 40px;
+  /* background-color: pink; */
+}
+.buttonAcheterPageOfferCadre {
+  display: flex;
   justify-content: center;
 }
+.buttonAcheterPageOffer {
+  background-color: #2db0ba;
+  border-radius: 5px;
+  width: 320px;
+  height: 36px;
+  border: none;
+  color: white;
+}
+.buttonAcheterPageOffer:hover {
+  cursor: pointer;
+}
 
-/* SIGNUP */
+/*/////////////////////////// SIGNUP /////////////////////////*/
 .signupEnsemble {
   display: flex;
   align-items: center;
@@ -282,6 +378,7 @@ a {
 .butonEnsemble {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
 }
 .buttonssignup {
   display: flex;
@@ -309,20 +406,21 @@ a {
   justify-content: center;
   font-size: 24px;
   font-weight: 300;
+  margin-bottom: 20px;
 }
 .checkBoxTitre {
   display: flex;
-  /* background-color: aqua; */
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
+  /* background-color: aqua; */
 }
 .inputcheckbox {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
 }
 .titreH2 {
   font-size: 16px;
-  margin-right: 10px;
   color: #666666;
   font-weight: 400;
   margin-right: 25px;
@@ -331,10 +429,12 @@ a {
   margin-bottom: 20px;
   color: #999999;
   font-size: 12px;
+  line-height: 15px;
 }
 .buttonSinscrire {
   color: white;
   background-color: #2db0ba;
+  margin-bottom: 10px;
   border-radius: 5px;
   border: none;
   height: 40px;
@@ -344,7 +444,8 @@ a {
 .buttonSinscrire:hover {
   cursor: pointer;
 }
-/* LOGIN */
+
+/*/////////////////////////// LOGIN /////////////////////////*/
 .loginEnsemble {
   display: flex;
   align-items: center;
@@ -366,6 +467,7 @@ a {
   background-color: #2db0ba;
   border-radius: 5px;
   border: none;
+  margin-bottom: 10px;
 }
 .seConnecterButton:hover {
   cursor: pointer;

@@ -1,23 +1,40 @@
 import axios from "axios";
-import Cookies from "js-cookie";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
-  const obj = {};
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [newsletter, setNewsletter] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const handleHome = () => {
-    navigate("/");
+
+  const handleLogIn = () => {
+    navigate("/login");
   };
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
       const response = await axios.post(
         " https://lereacteur-vinted-api.herokuapp.com/user/signup",
-        obj
+        {
+          email: email,
+          username: username,
+          password: password,
+          newsletter: newsletter,
+        }
       );
-      Cookies.set("myCookies", response.data.token);
+      if (response.data.token) {
+        setUsername(response.data.token);
+        navigate("/");
+      }
     } catch (error) {
-      console.log(error.message);
+      console.log("Signup Error ===> ", error.message);
+      console.log("Catch error ===> ", error.response);
+      if (error.response.status === 409) {
+        setErrorMessage("Cet email a déjà un compte");
+      }
     }
   };
 
@@ -29,25 +46,19 @@ const SignUp = () => {
         <form onSubmit={handleSubmit}>
           <div className="butonEnsemble">
             <input
-              onChange={(event) => {
-                obj.username = event.target.value;
-              }}
+              onChange={(event) => setUsername(event.target.value)}
               className="inputcard"
               type="text"
               placeholder="Nom de l'utilisateur"
             />
             <input
-              onChange={(event) => {
-                obj.email = event.target.value;
-              }}
+              onChange={(event) => setEmail(event.target.value)}
               className="inputcard"
               type="email"
               placeholder="Email"
             />
             <input
-              onChange={(event) => {
-                obj.password = event.target.value;
-              }}
+              onChange={(event) => setPassword(event.target.value)}
               className="inputcard"
               type="password"
               placeholder="Mot de passe"
@@ -55,7 +66,11 @@ const SignUp = () => {
           </div>
 
           <div className="checkBoxTitre">
-            <input className="inputcheckbox" type="checkbox" />
+            <input
+              className="inputcheckbox"
+              type="checkbox"
+              onChange={(event) => setNewsletter(event.target.checked)}
+            />
             <h2 className="titreH2">S'inscrire à notre newsletter</h2>
           </div>
           <p className="texteSignUp">
@@ -68,8 +83,8 @@ const SignUp = () => {
               S'inscrire
             </button>
 
-            <p className="buttonssignup" onClick={handleHome}>
-              Pas encore de compte ? Inscris-toi !
+            <p className="buttonssignup" onClick={handleLogIn}>
+              Tu as déjà un compte ? Connecte toi !
             </p>
           </div>
         </form>
