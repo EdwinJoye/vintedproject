@@ -22,7 +22,7 @@ const Header = ({ item }) => {
           <input
             className="searchButton"
             type="search"
-            placeholder="Search..."
+            placeholder="Recherche des articles"
           />
         </div>
         <div className="ensembleButtons">
@@ -32,7 +32,7 @@ const Header = ({ item }) => {
           <button className="buttonUnique" onClick={handleLogIn}>
             Se connecter
           </button>
-          <button className="buttonVends">vends tes articles</button>
+          <button className="buttonVends">Vends tes articles</button>
         </div>
       </header>
     </div>

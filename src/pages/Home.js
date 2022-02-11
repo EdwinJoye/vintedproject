@@ -27,7 +27,7 @@ const Home = () => {
     <div>
       <div className="ligneGrise"></div>
       <div>
-        <img className="banner" src={Banner} alt="" />
+        <img className="banner torn-paper" src={Banner} alt="" />
       </div>
       <div className="container">
         <h1 className="titre">Article populaires</h1>
