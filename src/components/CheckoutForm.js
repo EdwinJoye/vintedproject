@@ -14,19 +14,22 @@ const CheckoutForm = ({ title, price }) => {
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      const cardElements = elements.getElement(CardElement);
-      const stripeResponse = await stripe.createToken(cardElements);
+      const cardElement = elements.getElement(CardElement);
+      const stripeResponse = await stripe.createToken(cardElement, {
+        name: "Edwin",
+      });
+      console.log(stripeResponse);
       const stripeToken = stripeResponse.token.id;
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/payment",
         { stripeToken, title, price }
       );
-      // console.log(response.data);
+      console.log(response.data);
       if (response.data.status === "succeeded") {
         setCompleted(true);
       }
     } catch (error) {
-      // console.log(error.message);
+      console.log(error.message);
     }
   };
 
@@ -41,11 +44,11 @@ const CheckoutForm = ({ title, price }) => {
           </div>
           <div className="boxDouble">
             <h2 className="boxTitre">Frais protection acheteurs</h2>
-            <div className="boxPrix">1 €</div>
+            <div className="boxPrix">{fraisProtection} €</div>
           </div>
           <div className="boxFraisDePortPrix">
             <h3 className="boxTitre">Frais de port</h3>
-            <div className="boxPrix">2 €</div>
+            <div className="boxPrix">{fraisDePort} €</div>
           </div>
         </div>
         <div className="boxVide"></div>
