@@ -9,7 +9,7 @@ const Offer = () => {
   const navigate = useNavigate();
 
   const handleAchat = () => {
-    navigate("/achat");
+    navigate("/achat", { state: { title: "Toto", price: "12" } });
   };
   useEffect(() => {
     const fetchData = async () => {

@@ -1,25 +1,29 @@
 import { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import axios, { Axios } from "axios";
+import React from "react";
 
-const CheckoutForm = (item) => {
+const CheckoutForm = ({ state }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [completed, setCompleted] = useState(false);
-  const userId = "item.";
+  const userId = "ezfozeizhf";
 
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
       const cardElements = elements.getElement(CardElement);
       const stripeResponse = await stripe.createToken(cardElements, {
-        name: { event },
+        name: userId,
       });
       console.log(stripeResponse);
       const stripeToken = stripeResponse.token.id;
+      const productTitle = "title";
+      const productPrice = "98";
+
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/payment",
-        { stripeToken }
+        { stripeToken, productTitle, productPrice }
       );
       console.log(response.data);
       if (response.data.status === "succeeded") {
@@ -37,26 +41,26 @@ const CheckoutForm = (item) => {
           <div className="résuméDeLaCommande">Résumé de la commande</div>
           <div className="boxDouble">
             <h1 className="boxTitre">Commande</h1>
-            <div className="boxPrix">Prix €</div>
+            <div className="boxPrix">{} €</div>
           </div>
           <div className="boxDouble">
             <h2 className="boxTitre">Frais protection acheteurs</h2>
-            <div className="boxPrix">Prix €</div>
+            <div className="boxPrix">{} €</div>
           </div>
           <div className="boxFraisDePortPrix">
             <h3 className="boxTitre">Frais de port</h3>
-            <div className="boxPrix">2.OO €</div>
+            <div className="boxPrix">{} €</div>
           </div>
         </div>
         <div className="boxVide"></div>
         <div className="boxDuBas">
           <div className="boxTotalPrix">
             <h4 className="boxTitreTotal ">Total</h4>
-            <div className="boxPrixTotal">Prix €</div>
+            <div className="boxPrixTotal">{} €</div>
           </div>
           <div className="boxText">
-            Il ne vous reste plus qu'une étape pour vous offrir ${item._id} 😍.
-            Vous allez payer 13 € (frais de protection et frais de port inclus).
+            Il ne vous reste plus qu'une étape pour vous offrir $ 😍. Vous allez
+            payer 13 € (frais de protection et frais de port inclus).
           </div>
           <div className="boxVide"></div>
           <CardElement className="boxNuméroDeCarte"></CardElement>

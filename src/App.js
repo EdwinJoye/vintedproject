@@ -50,7 +50,10 @@ function App() {
           path="/publish"
           element={<Publish token={token}></Publish>}
         ></Route>
-        <Route path="/achat" element={<Payment> </Payment>}></Route>
+        <Route
+          path="/achat"
+          element={<Payment token={token}> </Payment>}
+        ></Route>
       </Routes>
     </Router>
   );
