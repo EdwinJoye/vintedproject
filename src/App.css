@@ -11,12 +11,15 @@ a {
   text-decoration: none;
   color: black;
 }
-
+html {
+  /* background-color: #ebedee; */
+}
 /*/////////////////////////// HEADER /////////////////////////*/
 .header {
   display: flex;
   justify-content: space-between;
   padding: 15px;
+  background-color: white;
 }
 .ensembleLogoSearch {
   display: flex;
@@ -257,18 +260,26 @@ a {
 .pictures {
   width: 220px;
   height: 320px;
+  padding: 5px;
   object-fit: cover;
 }
 .ensemblePricePopular {
-  height: 20px;
-  padding: 5px;
+  height: 10px;
+  padding: 10px;
   display: flex;
+
   justify-content: space-between;
   /* background-color: #2db0ba; */
 }
 .priceCard {
   font-size: 15px;
   color: grey;
+}
+.tailleProduct {
+  color: #cdd2d6;
+  font-size: 13px;
+  margin-bottom: 5px;
+  margin-left: 10px;
 }
 .popularCard {
   font-size: 15px;
@@ -298,16 +309,20 @@ a {
   border: none;
   justify-content: center;
 }
+.buttonPagePrécédenteSuivante:hover {
+  cursor: pointer;
+}
 
 /*/////////////////////////// OFFER PAGE /////////////////////////*/
 .ensemblePageOffer {
   background-color: #ebedee;
   height: calc(100vh - 64px);
-  padding: 40px;
+  display: flex;
+  justify-content: center;
 }
 .picturePageOffer {
-  width: 340px;
-  height: 490px;
+  width: 400px;
+  height: 610px;
   margin-left: 100px;
   object-fit: cover;
 }
@@ -316,12 +331,12 @@ a {
   align-items: center;
   justify-content: space-between;
   margin: 0px 156.5px;
-  padding: 30px;
-  background-color: #ebedee;
+  width: 100%;
+  /* background-color: yellow; */
 }
 .ensembleInfosPageOffer {
-  width: 280px;
-  height: 430px;
+  width: 340px;
+  height: 550px;
   background-color: white;
   margin-right: 100px;
   padding: 30px;
@@ -342,28 +357,37 @@ a {
   /* background-color: pink; */
 }
 .ensembleTitreDetails {
-  font-size: 11px;
+  font-size: 15px;
   color: #999999;
-  line-height: 15px;
+  line-height: 25px;
   /* background-color: #2db0ba; */
   flex: 1;
 }
+.logoCard2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  margin-right: 20px;
+}
 .ensembeDetails {
-  font-size: 11px;
+  font-size: 15px;
   color: #666666;
-  line-height: 15px;
+  line-height: 25px;
   /* background-color: #999999; */
   flex: 1;
 }
+
 .productNamePageOffer {
-  font-size: 13px;
-  margin-bottom: 10px;
-  height: 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  height: 40px;
+  line-height: 25px;
   /* background-color: azure; */
 }
 .productDescriptionPageOffer {
-  height: 65px;
-  font-size: 13px;
+  height: 71px;
+  font-size: 16px;
+  line-height: 20px;
   color: #999999;
   overflow: hidden;
   /* background-color: antiquewhite; */
@@ -372,9 +396,12 @@ a {
   display: flex;
   align-items: center;
   margin-top: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   height: 40px;
   /* background-color: pink; */
+}
+.nomUserNameOffer {
+  font-size: 18px;
 }
 .buttonAcheterPageOfferCadre {
   display: flex;
@@ -701,6 +728,10 @@ a {
   margin-bottom: 20px;
   padding: 10px;
   margin-top: 20px;
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+.texteSpan {
+  font-weight: bolder;
 }
 .boxPay {
   display: flex;
@@ -708,11 +739,11 @@ a {
 }
 .buttonPay {
   flex: 2;
-  border-radius: 3px;
+  border-radius: 5px;
   border: none;
-  height: 30px;
+  height: 44px;
   color: white;
-  background-color: rgb(9, 218, 9);
+  background-color: #00c06d;
 }
 .buttonPay:hover {
   cursor: pointer;

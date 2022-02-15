@@ -1,16 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const Offer = () => {
   const { id } = useParams();
   const [data, setData] = useState();
   const [isLoading, setIsloading] = useState(true);
-  const navigate = useNavigate();
-
-  // const handleAchat = (titre,prix) => {
-  //   navigate("/achat", { state: { title: titre, price: prix });
-  // };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,11 +53,13 @@ const Offer = () => {
               </div>
               <div className="ensembleLogoNomPageOffer ">
                 <img
-                  className="logoCard"
+                  className="logoCard2"
                   src={data.owner.account.avatar.secure_url}
                   alt="logoCard"
                 />
-                <div>{data.owner.account.username}</div>
+                <div className="nomUserNameOffer">
+                  {data.owner.account.username}
+                </div>
               </div>
               <Link
                 className="buttonAcheterPageOfferCadre"

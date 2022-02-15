@@ -28,7 +28,10 @@ const Cards = ({ item }) => {
             <div className="priceCard">{item.product_price}</div>
             <div className="popularCard">popular</div>
           </div>
-          <div>Taille</div>
+          <div>
+            <p className="tailleProduct">{item.product_details[1].TAILLE}</p>
+            <p className="tailleProduct ">{item.product_details[0].MARQUE}</p>
+          </div>
           <div>{item.product_details.marque}</div>
         </div>
       </Link>
