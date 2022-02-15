@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 
 const Offer = () => {
   const { id } = useParams();
@@ -8,9 +8,10 @@ const Offer = () => {
   const [isLoading, setIsloading] = useState(true);
   const navigate = useNavigate();
 
-  const handleAchat = () => {
-    navigate("/achat", { state: { title: "Toto", price: "12" } });
-  };
+  // const handleAchat = (titre,prix) => {
+  //   navigate("/achat", { state: { title: titre, price: prix });
+  // };
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
@@ -63,14 +64,16 @@ const Offer = () => {
                 />
                 <div>{data.owner.account.username}</div>
               </div>
-              <div className="buttonAcheterPageOfferCadre">
-                <button
-                  className="buttonAcheterPageOffer"
-                  onClick={handleAchat}
-                >
-                  Acheter
-                </button>
-              </div>
+              <Link
+                className="buttonAcheterPageOfferCadre"
+                to="/achat"
+                state={{
+                  title: data.product_name,
+                  price: data.product_price,
+                }}
+              >
+                <button className="buttonAcheterPageOffer">Acheter</button>
+              </Link>
             </div>
           </div>
         </div>
