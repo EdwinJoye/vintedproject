@@ -16,7 +16,7 @@ a {
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 20px;
 }
 .ensembleLogoSearch {
   display: flex;
@@ -280,6 +280,24 @@ a {
   display: flex;
   /* border: 2px solid black; */
 }
+.boxButtonsPagePrécédenteSuivante {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+.buttonPagePrécédenteSuivante {
+  padding: 10px;
+  margin-left: 40px;
+  width: 150px;
+  height: 30px;
+  align-items: center;
+  display: flex;
+  border-radius: 5px;
+  background-color: #2db0ba;
+  color: white;
+  border: none;
+  justify-content: center;
+}
 
 /*/////////////////////////// OFFER PAGE /////////////////////////*/
 .ensemblePageOffer {
@@ -487,5 +505,209 @@ a {
   margin-bottom: none;
 }
 .buttonssignup:hover {
+  cursor: pointer;
+}
+
+/*/////////////////////////// Publish /////////////////////////*/
+.backgroundPublish {
+  background-color: #ebedee;
+  height: 2000px;
+}
+.ensembleBox {
+  display: flex;
+  justify-content: center;
+}
+.titrePublish {
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+.boxAjouteUnePhoto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 300px;
+  flex: 2;
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: white;
+}
+.buttonAjouterUnePhoto {
+  color: #2db0ba;
+  border: #2db0ba 2px solid;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px;
+}
+.buttonAjouterUnePhoto:hover {
+  cursor: pointer;
+}
+.ensemnleBoxTitresInputs1 {
+  height: 100px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.ensemnleBoxTitresInputs2 {
+  height: 100px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.boxTitresInputs {
+  display: flex;
+  border-bottom: 1px solid #cdd2d6;
+}
+.boxTitresInputsTitre {
+  display: flex;
+  border-bottom: 1px solid #cdd2d6;
+  height: 30px;
+}
+.boxTitreImputsDécris {
+  display: flex;
+  height: 120px;
+  border-bottom: 1px solid #cdd2d6;
+}
+.titresPrixDécrit {
+  flex: 1;
+  background-color: white;
+  padding: 10px;
+  font-size: 12px;
+}
+.titresPublish {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 12px;
+}
+.boxPrix {
+  display: flex;
+  height: 200px;
+  margin-bottom: 20px;
+}
+.titresPrixPublish {
+  flex: 1;
+  background-color: white;
+  padding: 10px;
+  font-size: 12px;
+}
+.inputsPublish {
+  flex: 1;
+  border: none;
+}
+.boxbuttonSubmitPublish {
+  display: flex;
+  justify-content: center;
+}
+.buttonAjouterPublish {
+  background-color: #2db0ba;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  height: 30px;
+  width: 80px;
+}
+
+/*/////////////////////////// ACHAT /////////////////////////*/
+
+.boxGlobaleAchat {
+  padding: 60px;
+  background-color: #ebedee;
+  display: flex;
+  justify-content: center;
+}
+.boxDuHaut {
+  padding: 20px;
+  background-color: white;
+  width: 500px;
+}
+.résuméDeLaCommande {
+  color: lightgray;
+  height: 30px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  /* background-color: aqua; */
+}
+.boxDouble {
+  display: flex;
+  justify-content: space-between;
+}
+.boxTitre {
+  margin-bottom: 10px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  color: #999999;
+  /* background-color: #d66492; */
+  flex: 2;
+}
+.boxPrix {
+  margin-bottom: 10px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  color: #999999;
+  /* background-color: #2db0ba; */
+}
+.boxTitreTotal {
+  margin-bottom: 10px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  flex: 2;
+}
+.boxPrixTotal {
+  margin-bottom: 10px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.boxFraisDePortPrix {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.boxDuBas {
+  padding: 20px;
+  width: 500px;
+  background-color: white;
+}
+.boxVide {
+  border-bottom: lightgray 2px solid;
+}
+.boxTotalPrix {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.boxText {
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 20px;
+}
+.boxNuméroDeCarte {
+  border: #cdd2d6 1px solid;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 10px;
+  margin-top: 20px;
+}
+.boxPay {
+  display: flex;
+  justify-content: center;
+}
+.buttonPay {
+  flex: 2;
+  border-radius: 3px;
+  border: none;
+  height: 30px;
+  color: white;
+  background-color: rgb(9, 218, 9);
+}
+.buttonPay:hover {
   cursor: pointer;
 }

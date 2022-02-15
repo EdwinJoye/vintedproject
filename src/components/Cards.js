@@ -7,11 +7,14 @@ const Cards = ({ item }) => {
         {" "}
         <div className="cadreOffer">
           <div className="ensembleLogoNom">
-            <img
-              className="logoCard"
-              src={item.owner.account.avatar.secure_url}
-              alt="logoCard"
-            />
+            {item.owner.account.avatar && (
+              <img
+                className="logoCard"
+                src={item.owner.account.avatar.secure_url}
+                alt="logoCard"
+              />
+            )}
+
             <div className="nomCard">{item.owner.account.username}</div>
           </div>
           <div className="divPicture">
@@ -34,3 +37,18 @@ const Cards = ({ item }) => {
 };
 
 export default Cards;
+
+{
+  /* <div className="ensembleLogoNom">
+  {item.owner.account.avatar ? (
+    <img
+      className="logoCard"
+      src={item.owner.account.avatar.secure_url}
+      className="avatar-picture"
+    />
+  ) : (
+    <h1></h1>
+  )}
+  <div className="nomCard">{item.owner.account.username}</div>
+</div>; */
+}

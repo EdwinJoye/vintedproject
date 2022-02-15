@@ -1,47 +1,27 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../img/Vinted-logo.svg.png";
 
-const Header = ({ token, setUser }) => {
-  const [data, setData] = useState();
-  const [isLoading, setIsloading] = useState(true);
-
-  // const router = express.Router();
+const Header = ({ token, setUser, setSearchBar }) => {
   const navigate = useNavigate();
-
-  const handleSignUp = () => {
-    navigate("/signup");
-  };
-
-  const handleLogIn = () => {
-    navigate("/login");
-  };
-  const handleHome = () => {
-    navigate("/");
-  };
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = await axios.get(
-  //       `https://lereacteur-vinted-api.herokuapp.com/offers${product_name}`
-  //     );
-  //     setData(response.data);
-  //     setIsloading(false);
-  //   };
-  //   fetchData();
-  // }, [product_name]);
 
   return token ? (
     <div>
       <header className="header container">
         <div className="ensembleLogoSearch">
-          <img className="logo" src={Logo} alt="" onClick={handleHome} />
+          <Link to="/">
+            {" "}
+            <img className="logo" src={Logo} alt="" />
+          </Link>
           <input
             className="searchButton"
-            type="search"
+            type="text"
             placeholder="Recherche des articles"
-          />{" "}
+            onChange={(event) => {
+              console.log(event.target.value);
+              setSearchBar(event.target.value);
+            }}
+          />
         </div>{" "}
         <div className="ensembleButtons">
           <button
@@ -53,7 +33,10 @@ const Header = ({ token, setUser }) => {
           >
             Se déconnecter
           </button>
-          <button className="buttonVends">Vends tes articles</button>
+          <Link to="/publish">
+            {" "}
+            <button className="buttonVends">Vends tes articles</button>
+          </Link>
         </div>
       </header>
     </div>
@@ -61,39 +44,40 @@ const Header = ({ token, setUser }) => {
     <div>
       <header className="header container">
         <div className="ensembleLogoSearch">
-          <img className="logo" src={Logo} alt="" onClick={handleHome} />
+          <Link to="/">
+            <img className="logo" src={Logo} alt="" />{" "}
+          </Link>
+
           <div>
             <input
               className="searchButton"
-              type="search"
+              type="text"
               placeholder="Recherche des articles"
-              onChange={(searchValue) => {
-                console.log(searchValue);
-                const response = axios
-                  .get(
-                    `https://lereacteur-vinted-api.herokuapp.com/offer?title=${searchValue}`
-                  )
-                  .then((data) => {
-                    console.log("data", data);
-                    setData(response.data);
-                  });
+              onChange={(event) => {
+                console.log(event.target.value);
+                setSearchBar(event.target.value);
               }}
-            />{" "}
+            />
             <div>
-              <p>Triez par prix</p>
+              <p>Trier par prix</p>
               <div></div>
               <div></div>
             </div>
           </div>
         </div>
         <div className="ensembleButtons">
-          <button className="buttonUnique" onClick={handleSignUp}>
-            S'inscrire
-          </button>
-          <button className="buttonUnique" onClick={handleLogIn}>
-            Se connecter
-          </button>
-          <button className="buttonVends">Vends tes articles</button>
+          <Link to="/signup">
+            {" "}
+            <button className="buttonUnique">S'inscrire</button>{" "}
+          </Link>
+
+          <Link to="/login">
+            {" "}
+            <button className="buttonUnique">Se connecter</button>{" "}
+          </Link>
+          <Link to="/login">
+            <button className="buttonVends">Vends tes articles</button>{" "}
+          </Link>
         </div>
       </header>
     </div>
