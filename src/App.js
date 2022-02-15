@@ -2,7 +2,6 @@ import "./App.css";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { loadStripe } from "@stripe/stripe-js";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
