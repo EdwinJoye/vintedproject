@@ -3,7 +3,6 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
@@ -12,8 +11,6 @@ import Login from "./pages/Login";
 import Cookies from "js-cookie";
 import Payment from "./pages/Payment";
 import Publish from "./components/Publish";
-
-const stripePromise = loadStripe("pk_test_votreCléPublique");
 
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || null);

@@ -16,7 +16,10 @@ const Publish = ({ token }) => {
   const [isLoading, setIsloading] = useState(false);
 
   const handleSubmit = async (event) => {
+    console.log(data);
     try {
+      console.log(isLoading);
+      console.log(setDescription);
       console.log(token);
       event.preventDefault();
       setIsloading(true);

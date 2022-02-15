@@ -11,6 +11,7 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const handleLogIn = () => {
+    console.log(errorMessage);
     navigate("/login");
   };
   const handleSubmit = async (event) => {

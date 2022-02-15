@@ -21,7 +21,7 @@ const CheckoutForm = ({ title, price }) => {
         name: "Edwin",
       });
       const stripeToken = stripeResponse.token.id;
-
+      console.log(completed);
       console.log("LOG", title, price);
       console.log("LOG", stripeToken);
       const response = await axios.post(
