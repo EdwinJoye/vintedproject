@@ -6,23 +6,28 @@ import React from "react";
 const CheckoutForm = ({ title, price }) => {
   const stripe = useStripe();
   const elements = useElements();
+
   const [completed, setCompleted] = useState(false);
   const fraisProtection = price / 10;
   const fraisDePort = price / 20;
   const totalPrice = Math.round(price + fraisDePort + fraisProtection);
 
   const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
-      event.preventDefault();
       const cardElement = elements.getElement(CardElement);
+
       const stripeResponse = await stripe.createToken(cardElement, {
         name: "Edwin",
       });
-      console.log(stripeResponse);
       const stripeToken = stripeResponse.token.id;
+
+      console.log("LOG", title, price);
+      console.log("LOG", stripeToken);
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/payment",
-        { stripeToken, title, price }
+        // { stripeToken, title, price }
+        { token: stripeToken, title: title, amount: price }
       );
       console.log(response.data);
       if (response.data.status === "succeeded") {

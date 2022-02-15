@@ -9,12 +9,10 @@ const Payment = ({ token }) => {
   const { title, price } = location.state;
 
   console.log(title, price);
-  const stripePromise = loadStripe(
-    "pk_test_51KTQJVEeTeeHVINL7y3RuMe3FiKGHmTkpm6N3W3Je7C6BMtH08lnI0MiEgRrnbEtx7aOTNqQcH8r5MjGpzumTnyp00WpVybudc"
-  );
+  const stripePromise = loadStripe("pk_test_5z9rSB8XwuAOihoBixCMfL6X");
   return token ? (
     <Elements stripe={stripePromise}>
-      <CheckoutForm title={title} price={price}></CheckoutForm>
+      <CheckoutForm title={title} price={price} />
     </Elements>
   ) : (
     <Navigate to="/login"></Navigate>
