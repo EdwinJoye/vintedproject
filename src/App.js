@@ -10,7 +10,7 @@ import Offer from "./pages/Offer";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Cookies from "js-cookie";
-import Achat from "./pages/Achat";
+import Payment from "./pages/Payment";
 import Publish from "./components/Publish";
 
 const stripePromise = loadStripe("pk_test_votreCléPublique");
@@ -50,10 +50,8 @@ function App() {
           path="/publish"
           element={<Publish token={token}></Publish>}
         ></Route>
+        <Route path="/achat" element={<Payment> </Payment>}></Route>
       </Routes>
-      <Elements path="/achat" stripe={stripePromise}>
-        <Achat></Achat>
-      </Elements>
     </Router>
   );
 }

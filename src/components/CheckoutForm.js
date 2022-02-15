@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import axios, { Axios } from "axios";
 
-const Achat = (item) => {
+const CheckoutForm = (item) => {
   const stripe = useStripe();
   const elements = useElements();
   const [completed, setCompleted] = useState(false);
@@ -68,4 +68,4 @@ const Achat = (item) => {
     </div>
   );
 };
-export default Achat;
+export default CheckoutForm;
